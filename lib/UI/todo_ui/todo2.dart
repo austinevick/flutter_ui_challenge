@@ -24,7 +24,7 @@ class _Todo2State extends State<Todo2> with TickerProviderStateMixin {
     Color.fromRGBO(99, 138, 223, 1.0),
     Color.fromRGBO(111, 194, 173, 1.0)
   ];
-  var cardIndex = 0;
+  var selectedIndex = 0;
   ScrollController scrollController;
   AnimationController animationController;
   ColorTween colorTween;
@@ -88,7 +88,11 @@ class _Todo2State extends State<Todo2> with TickerProviderStateMixin {
                   itemCount: cardList.length,
                   itemBuilder: (context, index) {
                     var card = cardList[index];
-                    return GestureDetector(
+                    return GestureDetector(onTap: (){
+                      setState(() {
+                        selectedIndex = 0;
+                      });
+                    },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Card(
