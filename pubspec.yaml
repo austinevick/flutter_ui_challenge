@@ -25,6 +25,10 @@ dependencies:
   cupertino_icons: ^0.1.2
   font_awesome_flutter:
   flutter_icons:
+  flutter_rating_bar:
+  http:
+  charts_flutter:
+  english_words:  
 
 dev_dependencies:
   flutter_test:

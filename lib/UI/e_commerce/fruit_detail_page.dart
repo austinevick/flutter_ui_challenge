@@ -120,10 +120,10 @@ class FruitJuiceDetailPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(bottom: 4,top: 15),
             child: Center(
               child: Container(width: MediaQuery.of(context).size.width/1.1,
-              height: 65,
+              height: 60,
                 child: FlatButton(
                     shape: OutlineInputBorder(
                       borderSide: BorderSide.none,
