@@ -28,7 +28,8 @@ dependencies:
   flutter_rating_bar:
   http:
   charts_flutter:
-  english_words:  
+  english_words: 
+  flutter_custom_clippers:   
 
 dev_dependencies:
   flutter_test:

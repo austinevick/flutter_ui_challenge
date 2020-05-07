@@ -1,8 +1,6 @@
-import 'dart:convert';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui/UI/charts/flutter_charts.dart';
-import 'package:http/http.dart';
+import 'package:flutter_ui/UI/login_page/login_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,80 +13,10 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: JsonDemo());
+        home: LoginPage());
   }
 }
 
-class JsonDemo extends StatefulWidget {
-  @override
-  _JsonDemoState createState() => _JsonDemoState();
-}
-
-class _JsonDemoState extends State<JsonDemo> {
-  final String url =
-      "https://pixabay.com/api/?key=14864619-923ee1204c9967979dc2d22bf&q=burger&image_type=photo&pretty=true";
-  Future<List<Post>> getImage() async {
-    Response response = await get(url);
-    if (response.statusCode == 200) {
-      List body = jsonDecode(response.body)['hits'];
-      List<Post> post = body.map((items) => Post.fromMap(items)).toList();
-      return post;
-    }
-    return getImage();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: FutureBuilder(
-          future: getImage(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              List<Post> post = snapshot.data;
-              return ListView(
-                children: post
-                    .map((items) => Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                              height: 200,
-                              width: 150,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      colorFilter: ColorFilter.mode(
-                                          Colors.black54, BlendMode.darken),
-                                      fit: BoxFit.cover,
-                                      image:
-                                          NetworkImage(items.largeImageURL))),
-                              child: Text(
-                                items.tags,
-                                style: TextStyle(
-                                    fontSize: 25, color: Colors.white),
-                              )),
-                        ))
-                    .toList(),
-              );
-            }
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          }),
-    );
-  }
-}
-
-class Post {
-  String tags;
-  String largeImageURL;
-  String user;
-  Post({this.largeImageURL, this.tags, this.user});
-  factory Post.fromMap(Map<String, dynamic> maps) {
-    return Post(
-        tags: maps['tags'],
-        largeImageURL: maps['largeImageURL'],
-        user: maps['user']);
-  }
-}
 
 class ShoePage1 extends StatelessWidget {
   final List<String> shoeCategory = [
