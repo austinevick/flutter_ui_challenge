@@ -29,7 +29,8 @@ dependencies:
   http:
   charts_flutter:
   english_words: 
-  flutter_custom_clippers:   
+  flutter_custom_clippers: 
+  rounded_floating_app_bar: ^0.1.0  
 
 dev_dependencies:
   flutter_test:
