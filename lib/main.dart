@@ -2,6 +2,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui/UI/movie_app/movie_page.dart';
 
+import 'UI/login_page/login_page.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -13,10 +15,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: MoviePage());
+        home: LoginPage());
   }
 }
-
 
 class ShoePage1 extends StatelessWidget {
   final List<String> shoeCategory = [

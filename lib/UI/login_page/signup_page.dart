@@ -41,10 +41,11 @@ class SignUpScreen extends StatelessWidget {
               elevation: 10,
               borderRadius: BorderRadius.circular(15),
               child: Container(
-                height: 450,
+                height: 420,
                 width: 350,
                 padding: EdgeInsets.all(25),
-                child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Form(
                         child: Column(
@@ -67,18 +68,23 @@ class SignUpScreen extends StatelessWidget {
                             labelText: 'Confirm password',
                           ),
                         ),
-                        SizedBox(height: 20,
+                        SizedBox(
+                          height: 20,
                         ),
-                        Container(width: double.infinity,height: 40,
+                        Container(
+                            width: double.infinity,
+                            height: 40,
                             child: FlatButton(
                                 shape: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(50),
                                     borderSide: BorderSide.none),
                                 color: Colors.green,
                                 onPressed: () {},
-                                child: Text('Sign Up',style: 
-                                TextStyle(fontSize: 18,color: Colors.white),))),
-                        
+                                child: Text(
+                                  'Sign Up',
+                                  style: TextStyle(
+                                      fontSize: 18, color: Colors.white),
+                                ))),
                       ],
                     ))
                   ],
